@@ -22,6 +22,33 @@ case class MyTopLevel() extends Component {
   io.flag := (counter === 0) | io.cond1
 }
 
+class AdderCell() extends  Component {
+  val io = new Bundle {
+    val a, b, cin = in  port Bool()
+    val sum, cout = out port Bool()
+  }
+
+  io.sum  := io.a ^ io.b ^ io.cin
+  io.cout := (io.a & io.b) | (io.a & io.cin) | (io.b * io.cin)
+}
+
+class Adder(size: Int) extends Component {
+  val io = new Bundle {
+    val a, b   = in  UInt(size bits)
+    val result = out UInt(size bits)
+  }
+
+  var carry = False
+
+  for (i <- 0 until size) {
+    val a = io.a(i)
+    val b = io.b(i)
+
+    io.result(i) := a ^ b ^ c
+    c \= (a & b) | (a & c) | (b & c);
+  }
+}
+
 object MyTopLevelVerilog extends App {
   Config.spinal.generateVerilog(MyTopLevel())
 }
