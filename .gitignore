@@ -1,0 +1,16 @@
+*
+
+!.gitignore
+!README.md
+
+!flake.nix
+!flake.lock
+
+!build.sbt
+
+!project/
+!project/build.properties
+!project/plugins.sbt
+
+!hw/
+!hw/**/*
