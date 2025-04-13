@@ -12,5 +12,6 @@ object Config {
     onlyStdLogicVectorAtTopLevelIo = false
   )
 
-  def sim = SimConfig.withConfig(spinal).withFstWave
+  // disable the cache cause sbt cannot find the pluginsCacheDir
+  def sim = SimConfig.withConfig(spinal).withIVerilog.disableCache
 }

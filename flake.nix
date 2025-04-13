@@ -22,11 +22,17 @@
       in
       {
         devShell = pkgs.devshell.mkShell {
+          packages = with pkgs; [
+            iverilog
+            gcc
+            boost
+          ];
+
           imports = [ typelevel-nix.typelevelShell ];
-          name = "my-application";
+          name = "core";
           typelevelShell = {
             jdk.package = pkgs.jdk23;
-            native.enable = true;
+            native.enable = false;
             nodejs.enable = true;
           };
         };
