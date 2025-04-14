@@ -12,5 +12,5 @@
 !project/build.properties
 !project/plugins.sbt
 
-!hw/
-!hw/**/*
+!src/
+!src/**/*

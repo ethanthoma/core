@@ -1,17 +1,8 @@
 # Learning Hardware
 
-## Running
+## Testing
 
 ```sh
-// To generate the Verilog from the example
-sbt "runMain core.MyTopLevelVerilog"
-
-// To generate the VHDL from the example
-sbt "runMain core.MyTopLevelVhdl"
-
-// To run the testbench
-sbt "runMain core.MyTopLevelSim"
+// To run the testbench (tests with iverilog)
+sbt "runMain core.TestAdder"
 ```
-
-* The example hardware description is into `hw/spinal/core/MyTopLevel.scala`
-* The testbench is into `hw/spinal/core/MyTopLevelSim.scala`
